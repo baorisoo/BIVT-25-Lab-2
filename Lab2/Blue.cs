@@ -12,7 +12,12 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double a = 1;
+            for (int i = 0; i < n; i++)
+            {
+                answer += Math.Sin(x * (i + 1)) / a;
+                a *= x;
+            }
             // end
 
             return answer;
@@ -22,7 +27,18 @@ namespace Lab2
             double answer = 0;
 
             // code here
-
+            double o = -1;
+            double c = 5;
+            double last = 1;
+            double next = 2;
+            for (int i = 0; i < n; i++)
+            {
+                answer += o * c / last;
+                o *= -1;
+                c *= 5;
+                last *= next;
+                next += 1;
+            }
             // end
 
             return answer;
@@ -91,4 +107,5 @@ namespace Lab2
             return (SS, SY);
         }
     }
+
 }
