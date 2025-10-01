@@ -157,7 +157,26 @@ namespace Lab2
             double SY = 0;
 
             // code here
+            for (double x = a; x <= b+1e-12; x+=h)
+            {
+                int i = 0;
+                double power = 1;
+                int factorial = 1;
 
+                do
+                {
+                    if (i > 0)
+                    {
+                        factorial *= i;
+                        power *= x * x;
+                    }
+                    SS += (2 * i + 1) * power / factorial;
+                    i++;
+                }
+                while ((2 * i + 1) * power / factorial >= E);
+
+                SY += (1 + 2 * x * x) * Math.Exp(x * x);
+            }
             // end
 
             return (SS, SY);
@@ -165,5 +184,6 @@ namespace Lab2
     }
 
 }
+
 
 
